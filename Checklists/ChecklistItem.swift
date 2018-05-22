@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ChecklistItem {
+class ChecklistItem: NSObject {
     var text = ""
     var checked = false
     
@@ -16,4 +16,7 @@ class ChecklistItem {
         checked = !checked
     }
     
+    override var description: String {
+        return "Name: \(text) checked:\(checked)"
+    }
 }
