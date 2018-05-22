@@ -44,7 +44,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="7kR-a2-e9U">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Red-s8-5r2">
                             <connections>
-                                <action selector="barButtonAddItemPressed:" destination="19J-Kh-BjH" id="L7K-49-XlG"/>
+                                <segue destination="rpF-dv-OE1" kind="show" id="xzc-mA-zu7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -52,6 +52,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUf-WF-3eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="92.203898050974516"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="5KD-o9-bxH">
+            <objects>
+                <tableViewController id="rpF-dv-OE1" customClass="AddItemTVC" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="2u5-cA-7dZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="EJT-fP-psN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3bX-SS-cxA">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3bX-SS-cxA" id="pce-9B-M78">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNW-5T-7lk">
+                                                    <rect key="frame" x="16" y="7" width="343" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="rpF-dv-OE1" eventType="editingDidEndOnExit" id="UvG-sk-7AP"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="rpF-dv-OE1" id="V6P-QM-wgi"/>
+                            <outlet property="delegate" destination="rpF-dv-OE1" id="zVP-Zx-VcJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Item" id="gRr-gd-mK6">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ze6-ym-by0">
+                            <connections>
+                                <action selector="cancel" destination="rpF-dv-OE1" id="qr6-ZL-36E"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="PLS-7v-uFV">
+                            <connections>
+                                <action selector="done" destination="rpF-dv-OE1" id="VMB-u5-uLm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelBarButton" destination="ze6-ym-by0" id="j7E-yi-MMz"/>
+                        <outlet property="doneBarButton" destination="PLS-7v-uFV" id="H9E-Mr-SWY"/>
+                        <outlet property="textField" destination="JNW-5T-7lk" id="dNC-el-clb"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNM-IB-zVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917.60000000000002" y="90.404797601199405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qcm-A1-7pX">

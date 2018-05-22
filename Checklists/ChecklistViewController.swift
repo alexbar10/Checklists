@@ -92,6 +92,13 @@ class ChecklistViewController: UITableViewController {
 //        item.checked = !item.checked
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+//        let indexPaths = [indexPath]
+//        tableView.deleteRows(at: indexPaths, with: .automatic)
+        self.tableView.reloadData()
+    }
+    
     @IBAction func barButtonAddItemPressed(_ sender: UIBarButtonItem) {
         let newRowIndex = items.count
         let item = ChecklistItem()
